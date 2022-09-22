@@ -1,0 +1,9 @@
+<section>
+  <h1>Create your own URL alias!</h1>
+  <%= form_for @changeset, Routes.alias_path(@conn, :create), fn f -> %>
+    <%= label f, :url %>
+    <%= url_input f, :url, required: true %>
+    <%= error_tag f, :url %>
+    <%= submit "Submit" %>
+  <% end %>
+</section>

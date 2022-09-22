@@ -17,7 +17,9 @@ defmodule ShortenerWeb.Router do
   scope "/", ShortenerWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", AliasController, :new
+
+    resources "/aliases", AliasController, only: [:create, :show]
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,4 @@
+<section>
+  Your Shortener URL: <%= link(shortened_url(@alias), to: shortened_url(@alias), target: "_blank", rel: "noopener noreferrer") %><br>
+  Aliased URL: <%= link(uri_to_string(@alias.url), to: uri_to_string(@alias.url), target: "_blank", rel: "noopener noreferrer") %>
+</section>
