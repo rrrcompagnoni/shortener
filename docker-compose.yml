@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  shortener:
+    image: shortener
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4000:4000
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+      - .:/home/shortener
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      FILESYSTEM_FSINOTIFY_EXECUTABLE_FILE: /sbin/inotifyd
+  postgres:
+    image: postgres:14.5-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: not_a_prod_password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 3
+volumes:
+  db_data:
