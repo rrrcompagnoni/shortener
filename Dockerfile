@@ -11,4 +11,4 @@ RUN mix local.rebar --force
 
 COPY . .
 
-CMD ["sh", "-c", "mix deps.get && mix phx.server"]
+CMD ["sh", "-c", "mix phx.server"]

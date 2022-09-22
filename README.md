@@ -18,7 +18,7 @@ docker-compose build
 ```
 
 ```shell=
-docker-compose run shortener mix ecto.create
+docker-compose run shortener mix setup
 ```
 
 ### Running tests
