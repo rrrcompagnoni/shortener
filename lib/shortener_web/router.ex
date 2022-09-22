@@ -18,6 +18,7 @@ defmodule ShortenerWeb.Router do
     pipe_through :browser
 
     get "/", AliasController, :new
+    get "/:alias_id", RedirectController, :show
 
     resources "/aliases", AliasController, only: [:create, :show]
   end
