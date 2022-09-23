@@ -41,6 +41,8 @@ docker-compose up
 
 ### Documents
 
+[Development notes](docs/notes.txt)
+
 #### Use cases
 
 - [Alias Creation](docs/use_cases/alias_creation.md)

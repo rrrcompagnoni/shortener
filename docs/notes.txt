@@ -1,0 +1,3 @@
+- All the instructions for setup should be in the main readme file.
+- I'm more familiar with Docker builds. Following the installation guide should be fine to run in development mode.
+- I don't work with Frontend tasks ~3 years in this universe is an eternity. Tailwind seems to be a popular framework, that's why I have chosen it. More personal opinion, I think it is too granular and it makes things not so easy to be prototyped.
