@@ -1,5 +1,7 @@
 # Shortener
 
+[Access Shortener in Production](https://young-star-6466.fly.dev/)
+
 ## Installation
 
 ### Requirements
@@ -36,3 +38,10 @@ From your terminal console run:
 ```shell=
 docker-compose up
 ```
+
+### Documents
+
+#### Use cases
+
+- [Alias Creation](docs/use_cases/alias_creation.md)
+- [Alias Redirection](docs/use_cases/alias_redirection.md)
