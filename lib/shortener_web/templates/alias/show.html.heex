@@ -1,6 +1,6 @@
 <section class="w-10/12">
   <div>
-    <h2 class="text-4xl font-extrabold dark:text-white py-2">Alias: <%= @alias.id %></h2>
+    <h2 class="text-4xl font-extrabold dark:text-white py-2 break-words"><%= shortened_url(@alias) %></h2>
     <p class="mb-3 font-light text-gray-500 dark:text-gray-400 break-words"><strong>Aliased URL:</strong> <%= uri_to_string(@alias.url) %></p>
   </div>
   <%= link("Access aliased URL", to: shortened_url(@alias), target: "_blank", rel: "noopener noreferrer", class: "block font-medium text-blue-600 dark:text-blue-500 hover:underline") %>
