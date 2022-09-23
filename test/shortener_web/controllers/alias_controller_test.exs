@@ -6,7 +6,7 @@ defmodule ShortenerWeb.AliasControllerTest do
   describe "the root path" do
     test "GET /", %{conn: conn} do
       conn = get(conn, "/")
-      assert html_response(conn, 200) =~ "Create your own URL alias!"
+      assert html_response(conn, 200) =~ "form action=\"/aliases\" method=\"post\""
     end
   end
 
