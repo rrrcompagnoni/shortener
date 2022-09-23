@@ -26,6 +26,12 @@ defmodule ShortenerWeb.AliasControllerTest do
 
       assert html_response(conn, 422) =~ "form action=\"/aliases\" method=\"post\""
     end
+
+    test "renders the malformed URI error", %{conn: conn} do
+      conn = post(conn, Routes.alias_path(conn, :create), alias: %{"url" => "foo.com"})
+
+      assert html_response(conn, 422) =~ "form action=\"/aliases\" method=\"post\""
+    end
   end
 
   describe "GET /aliases/:id" do
