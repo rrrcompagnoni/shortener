@@ -14,6 +14,5 @@
 
 ## Notes
 
-1. There is an automatic conflict resolution when there is an ID collision. That resolution function should change the ID picked every time.
-2. You can pass an optional ID to the insert function. That enables ID customization.
-3. The Alias ID inventory implementation takes a random ID. It doesn't check inventory. A more robust implementation should rely on a previous created inventory with allocation constraints.
+1. You can pass an optional ID to the insert function. That enables ID customization.
+2. The Alias ID inventory implementation takes a random ID. It doesn't check inventory. A more robust implementation should rely on a previous created inventory with allocation constraints.

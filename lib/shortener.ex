@@ -25,11 +25,7 @@ defmodule Shortener do
     %Alias{}
     |> Alias.changeset(attributes)
     |> Ecto.Changeset.put_change(:id, Keyword.get(options, :id) || id_generator.())
-    |> Repo.insert(
-      on_conflict: [set: [id: id_generator.()]],
-      conflict_target: :id,
-      returning: true
-    )
+    |> Repo.insert(returning: true)
   end
 
   @spec get_alias(String.t()) :: {:ok, Alias.t()} | {:error, :not_found}

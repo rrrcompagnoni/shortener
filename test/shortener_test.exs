@@ -11,19 +11,13 @@ defmodule ShortenerTest do
   end
 
   describe "insert_alias/2" do
-    test "the collision resolution always pick a new Alias ID" do
-      Enum.each(1..100, fn _ ->
-        {:ok, existent_alias} = Shortener.insert_alias(%{"url" => "https://foo.com"})
+    test "creates an Alias" do
+      alias_id = Shortener.pick_alias_id()
 
-        resolution_alias_id = Shortener.pick_alias_id()
+      {:ok, url_alias} = Shortener.insert_alias(%{"url" => "https://foo.com"}, fn -> alias_id end)
 
-        {:ok, collided_alias} =
-          Shortener.insert_alias(%{"url" => "https://foo.com"}, fn -> resolution_alias_id end,
-            id: existent_alias.id
-          )
-
-        assert collided_alias.id == resolution_alias_id
-      end)
+      assert URI.to_string(url_alias.url) == "https://foo.com"
+      assert url_alias.id == alias_id
     end
 
     test "when the ID option is given it overrides the ID auto generation" do
