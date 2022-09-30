@@ -1,7 +1,5 @@
 # Shortener
 
-[Access Shortener in Production](https://young-star-6466.fly.dev/)
-
 ## Installation
 
 ### Requirements
